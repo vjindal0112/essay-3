@@ -1,64 +1,40 @@
 import React from "react"
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, navigate } from "gatsby"
+import styled from "styled-components"
 
-export default function Home({ data }) {
-  const posts = data.allMarkdownRemark.edges
+const Input = styled.input`
+  border-radius: 24px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  height: 24px;
+`
+
+const SVG = styled.svg`
+  line-height: 24px;
+  height: 24px;
+  color: #9aa0a6;
+  fill: #9aa0a6;
+`
+
+export default function Home() {
   return (
     <>
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: "12px",
-                }}
-              >
-                <Link
-                  style={{ boxShadow: `none`, color: "#005555" }}
-                  to={node.fields.slug}
-                >
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.spoiler,
-                }}
-              />
-            </section>
-          </article>
-        )
-      })}
+      <img src="/googleLogo.png" />
+      <SVG
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+      </SVG>
+      <Input
+        onKeyDown={e => {
+          let key = e.key || e.keyCode;
+          if (key === "Enter" || key === 13) {
+            navigate("/results")
+          }
+        }}
+      />
     </>
   )
 }
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            spoiler
-          }
-        }
-      }
-    }
-  }
-`
