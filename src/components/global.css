@@ -1,0 +1,43 @@
+:root {
+  background-color: #FFEEDD;
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+  color: #01664E;
+}
+
+code,
+pre {
+  background: #F7DFF5;
+  border-bottom: 1px solid #d8dee9;
+  color: #676d7a;
+}
+
+pre {
+  border-left: 2px solid #69c;
+  padding: 1em;
+}
+
+code {
+  padding: 2px 4px;
+  vertical-align: text-bottom;
+}
+
+body {
+  color: rgba(0,0,0,.86);
+}
+
+@media only screen and (min-width: 600px) {
+  .gatsby-resp-image-wrapper + em {
+    font-size: 90%;
+    margin-left: 20px;
+  }
+}
+
+section p img {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
