@@ -1,16 +1,34 @@
 :root {
-  background-color: #FFF;
+  background-color: #fff;
   font-family: Arial, Helvetica, sans-serif !important;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
-  color: #01664E;
+  color: #01664e;
 }
 
 code,
 pre {
-  background: #F7DFF5;
+  background: #f7dff5;
   border-bottom: 1px solid #d8dee9;
   color: #676d7a;
 }
@@ -26,7 +44,11 @@ code {
 }
 
 body {
-  color: rgba(0,0,0,.86);
+  color: rgba(0, 0, 0, 0.86);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @media only screen and (min-width: 600px) {
