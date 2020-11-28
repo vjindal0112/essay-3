@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, graphql, navigate } from "gatsby"
 import styled from "styled-components"
+import "../components/global.css"
 
 const InputDiv = styled.div`
   border-radius: 24px;

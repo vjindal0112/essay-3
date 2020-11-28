@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
+import "../components/global.css"
 
 const Wrapper = styled.div`
   max-width: 40em;
