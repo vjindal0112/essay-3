@@ -1,11 +1,21 @@
 import React from "react"
+import styled from 'styled-components'
 import { Link, graphql } from "gatsby"
 import "../components/global.css"
+
+
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout"
 // import SEO from "../components/seo"
 // import { rhythm, scale } from "../utils/typography"
+
+
+
+const Section = styled.section`
+  line-height: 1.5;
+  color: #333;
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -39,7 +49,7 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date} &#183; {post.timeToRead} min read
             </p>
           </header>
-          <section dangerouslySetInnerHTML={{ __html: post.html }} />
+          <Section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
               marginBottom: "16px",

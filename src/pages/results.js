@@ -60,6 +60,14 @@ const SVG = styled.svg`
   padding: 4px;
 `
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 export default function Results({ data }) {
   const posts = data.allMarkdownRemark.edges
 
@@ -79,26 +87,11 @@ export default function Results({ data }) {
             onChange={e => {
               console.log(query)
               setQuery(e.target.value)
-              // e.target.value != "" ? setFocused(true) : setFocused(false)
             }}
             value={query}
-            // onFocus={() => setFocused(query != "" ? true : false)}
-            // onBlur={() => setFocused(mouseIn ? true : false)}
-            // onKeyDown={e => {
-            //   let key = e.key || e.keyCode
-            //   if (key === "Enter" || key === 13) {
-            //     setNumEnterPressed(num => num + 1)
-            //     if (query == "what makes me... me?") {
-            //       navigate("/results")
-            //     } else if (numEnterPressed > 4) {
-            //       alert("Try the suggestion 👀")
-            //       setNumEnterPressed(0)
-            //     }
-            //   }
-            // }}
           />
         </InputDiv>
-      {posts.map(({ node }) => {
+      {shuffleArray(posts).map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article key={node.fields.slug}>
