@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  font-family: Roboto, arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 `
 
 const Spoiler = styled.p`
