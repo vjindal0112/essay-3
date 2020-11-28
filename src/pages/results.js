@@ -62,7 +62,7 @@ const SVG = styled.svg`
 export default function Results({ data }) {
   const posts = data.allMarkdownRemark.edges
 
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("what makes me... me?");
 
   return (
     <Wrapper>
