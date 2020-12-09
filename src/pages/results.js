@@ -4,6 +4,7 @@ import styled from "styled-components"
 import "../components/global.css"
 
 const Wrapper = styled.div`
+  padding-top: 32px;
   max-width: 40em;
   display: flex;
   flex-direction: column;
@@ -30,6 +31,7 @@ const InputDiv = styled.div`
   padding: 8px;
   border: 1px solid #ddd;
   height: 24px;
+  margin-bottom: 24px;
   outline: none;
   :hover {
     box-shadow: ${props =>
@@ -91,6 +93,7 @@ export default function Results({ data }) {
             value={query}
           />
         </InputDiv>
+        {/* <hr style={{"border": "1px solid #ccc", color: "#ccc", width: "100%"}}/> */}
       {shuffleArray(posts).map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
