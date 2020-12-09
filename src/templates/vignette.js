@@ -15,6 +15,9 @@ import Layout from "../components/layout"
 const Section = styled.section`
   line-height: 1.5;
   color: #333;
+  a {
+    text-decoration: underline;
+  }
 `
 
 class BlogPostTemplate extends React.Component {
