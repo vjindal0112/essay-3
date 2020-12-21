@@ -3,6 +3,8 @@ title: "Wow, so cool"
 date: "2020-12-10T23:19:51.246Z"
 slug: "cool-list"
 spoiler: "This list is unbelievably cool"
+id: 2
+edges: [1, 4]
 ---
 
 1. [Bladeless Fan, from scratch?](https://www.youtube.com/watch?v=a19OpQfwB2w)

@@ -19,6 +19,9 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                id
+                slug
+                edges
               }
             }
           }
@@ -34,15 +37,28 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create blog posts pages.
   const posts = result.data.allMarkdownRemark.edges
 
+  var postMap = new Map();
+
+  posts.forEach((post) => {
+    postMap[post.node.frontmatter.id] = post.node.frontmatter;
+  })
+  console.log(postMap);
+
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
+    let connections = [];
+    post.node.frontmatter.edges.forEach((postIndex, i) => {
+        connections.push(postMap[postIndex]);
+    })
+
     createPage({
-      path: post.node.fields.slug,
+      path: post.node.frontmatter.slug,
       component: vignette,
       context: {
         slug: post.node.fields.slug,
+        connections,
         previous,
         next,
       },

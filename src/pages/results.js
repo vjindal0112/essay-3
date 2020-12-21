@@ -95,16 +95,16 @@ export default function Results({ data }) {
         </InputDiv>
         {/* <hr style={{"border": "1px solid #ccc", color: "#ccc", width: "100%"}}/> */}
       {shuffleArray(posts).map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const title = node.frontmatter.title || node.frontmatter.slug
         return (
-          <article key={node.fields.slug}>
+          <article key={node.frontmatter.slug}>
             <header>
               <h3
                 style={{
                   marginBottom: "12px",
                 }}
               >
-                <Result to={node.fields.slug}>{title}</Result>
+                <Result to={`/${node.frontmatter.slug}`}>{title}</Result>
               </h3>
               {/* <small>{node.frontmatter.date}</small> */}
             </header>
@@ -133,12 +133,10 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt
-          fields {
-            slug
-          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            slug
             spoiler
           }
         }

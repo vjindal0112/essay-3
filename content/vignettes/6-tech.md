@@ -3,6 +3,8 @@ title: "Why do I like Tech?"
 date: "2020-11-28T23:19:51.246Z"
 slug: "tech"
 spoiler: "A window into my head about how I began to like technology"
+id: 6
+edges: [2, 4]
 ---
 
 I walked into the hallway to witness a huge line that led to four tables lined up next to each other. At each of the tables were four or five people greeting people, checking the roster, and handing out admission bands. I tried to find the end of the line and stood there.

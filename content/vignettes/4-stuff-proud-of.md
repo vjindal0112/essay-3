@@ -3,6 +3,8 @@ title: "Stuff I'm proud of"
 date: "2020-12-09T23:19:51.246Z"
 slug: "proud-of"
 spoiler: "A list of things that I'm glad I did"
+id: 4
+edges: [1,2,6]
 ---
 
 1. [StudyBuddies](https://umichstudybuddies.com)

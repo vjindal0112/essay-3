@@ -3,6 +3,8 @@ title: "Gratitude"
 date: "2020-12-08T23:19:51.246Z"
 slug: "gratitude"
 spoiler: "It's not always simple to find the bright side of things, but my drum teacher certainly figured it out"
+id: 3
+edges: [5]
 ---
 
 I checked my phone. It was Mr. Balsamo, my drum teacher for the past 8 years. He sent me a text saying that he was sick and would have to cancel drum practice. It was only 2 hours before class. That's pretty odd, he's never canceled class. Everyone gets sick, it's probably fine. 

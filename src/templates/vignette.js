@@ -11,6 +11,15 @@ import Layout from "../components/layout"
 // import { rhythm, scale } from "../utils/typography"
 
 
+const Result = styled(Link)`
+  box-shadow: none;
+  color: #1a0dab;
+  font-size: 20px;
+  font-weight: 500;
+  :hover {
+    text-decoration: underline;
+  }
+`
 
 const Section = styled.section`
   line-height: 1.5;
@@ -24,10 +33,11 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    // const { previous, next } = this.props.pageContext
+    const { connections, previous, next } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
+        {console.log(connections)}
         {/* <SEO
           title={post.frontmatter.title}
           spoiler={post.frontmatter.spoiler || post.excerpt}
@@ -52,6 +62,12 @@ class BlogPostTemplate extends React.Component {
               {post.frontmatter.date} &#183; {post.timeToRead} min read
             </p>
           </header>
+            {connections.map((frontmatter) => (
+                <>
+                {console.log(frontmatter.title)}
+                <Result to={`/${frontmatter.slug}`}>{frontmatter.title}</Result>
+                </>
+            ))}
           <Section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{

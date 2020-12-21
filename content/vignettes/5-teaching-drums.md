@@ -3,6 +3,8 @@ title: "Teaching Drums"
 date: "2020-11-28T23:19:51.246Z"
 slug: "teaching-drums"
 spoiler: "Learning to teach"
+id: 5
+edges: [3]
 ---
 
 I rang the doorbell to the house with a big speaker in my hands. Nick came running down the stairs while his mom came to the door. Nick was wearing one of my t-shirts I had given him when it had gotten too small for me. It seemed like every time I came over he was wearing one of my shirts. His mom opened the door. "Hi Varun! How are you?! And whatcha got there?" She leaned back as she said it in her own Mrs. Stuven way.
